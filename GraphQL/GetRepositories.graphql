@@ -1,0 +1,22 @@
+query GetRepositories($first: Int = 25, $query: String = "", $after: String) {
+  search(query: $query, type: REPOSITORY, first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+      nodes {
+        ... on Repository {
+          nameWithOwner
+          id
+          name
+          description
+          url
+          stargazerCount
+          owner {
+            login
+          }
+      }
+    }
+  }
+}
+

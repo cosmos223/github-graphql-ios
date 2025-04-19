@@ -1,0 +1,21 @@
+query GetIssuesByRepositoryID($id: ID!, $first: Int = 25, $after: String) {
+  node(id: $id) {
+    ... on Repository {
+      issues(first: $first, after: $after, orderBy: {field: CREATED_AT, direction: DESC}) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          id
+          title
+          number
+          state
+          author {
+            login
+          }
+        }
+      }
+    }
+  }
+}
