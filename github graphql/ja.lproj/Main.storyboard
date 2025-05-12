@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VTO-ic-mjF" kind="show" identifier="toIssue" id="JTe-DQ-jyr"/>
+                                    <segue destination="VTO-ic-mjF" kind="show" identifier="toIssues" id="JTe-DQ-jyr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

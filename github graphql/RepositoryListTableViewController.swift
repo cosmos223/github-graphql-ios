@@ -142,7 +142,7 @@ class RepositoryListTableViewController: UITableViewController, UISearchResultsU
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
-        case "toIssue":
+        case "toIssues":
             return reposiostories.count != 0
         default:
             return true
