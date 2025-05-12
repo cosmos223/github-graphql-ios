@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E259873B2DB24254008636F5 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E259873A2DB24254008636F5 /* Apollo */; };
 		E259874F2DB25F58008636F5 /* GitHubSchema in Frameworks */ = {isa = PBXBuildFile; productRef = E259874E2DB25F58008636F5 /* GitHubSchema */; };
+		E2CF1F732DCA289C003E94CD /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = E2CF1F722DCA289C003E94CD /* MarkdownUI */; };
+		E2CF1F762DCA2940003E94CD /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = E2CF1F752DCA2940003E94CD /* Markdown */; };
+		E2CF1F7B2DCA2B0C003E94CD /* Markdownosaur in Frameworks */ = {isa = PBXBuildFile; productRef = E2CF1F7A2DCA2B0C003E94CD /* Markdownosaur */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +26,26 @@
 			);
 			target = E259871C2DB2377F008636F5 /* github graphql */;
 		};
+		E298EA3F2DCB7C4F002ED2EE /* Exceptions for "GraphQL" folder in "github graphql" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AddComment.graphql,
+				DeleteIssue.graphql,
+			);
+			target = E259871C2DB2377F008636F5 /* github graphql */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		E298EA402DCB7C4F002ED2EE /* Exceptions for "GraphQL" folder in "Compile Sources" phase from "github graphql" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = E25987192DB2377F008636F5 /* Sources */;
+			membershipExceptions = (
+				AddComment.graphql,
+				DeleteIssue.graphql,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E259871F2DB2377F008636F5 /* github graphql */ = {
@@ -36,6 +58,10 @@
 		};
 		E25987402DB24E31008636F5 /* GraphQL */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E298EA3F2DCB7C4F002ED2EE /* Exceptions for "GraphQL" folder in "github graphql" target */,
+				E298EA402DCB7C4F002ED2EE /* Exceptions for "GraphQL" folder in "Compile Sources" phase from "github graphql" target */,
+			);
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
@@ -46,8 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CF1F732DCA289C003E94CD /* MarkdownUI in Frameworks */,
 				E259874F2DB25F58008636F5 /* GitHubSchema in Frameworks */,
+				E2CF1F7B2DCA2B0C003E94CD /* Markdownosaur in Frameworks */,
 				E259873B2DB24254008636F5 /* Apollo in Frameworks */,
+				E2CF1F762DCA2940003E94CD /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +123,9 @@
 			packageProductDependencies = (
 				E259873A2DB24254008636F5 /* Apollo */,
 				E259874E2DB25F58008636F5 /* GitHubSchema */,
+				E2CF1F722DCA289C003E94CD /* MarkdownUI */,
+				E2CF1F752DCA2940003E94CD /* Markdown */,
+				E2CF1F7A2DCA2B0C003E94CD /* Markdownosaur */,
 			);
 			productName = "github graphql";
 			productReference = E259871D2DB2377F008636F5 /* github graphql.app */;
@@ -125,6 +157,9 @@
 			packageReferences = (
 				E25987392DB24254008636F5 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				E259874D2DB25F58008636F5 /* XCLocalSwiftPackageReference "GitHubSchema" */,
+				E2CF1F712DCA289C003E94CD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				E2CF1F742DCA2940003E94CD /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				E2CF1F792DCA2B0C003E94CD /* XCRemoteSwiftPackageReference "Markdownosaur" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E259871E2DB2377F008636F5 /* Products */;
@@ -377,6 +412,30 @@
 				minimumVersion = 1.20.0;
 			};
 		};
+		E2CF1F712DCA289C003E94CD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+		E2CF1F742DCA2940003E94CD /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-markdown.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+		E2CF1F792DCA2B0C003E94CD /* XCRemoteSwiftPackageReference "Markdownosaur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/christianselig/Markdownosaur.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -388,6 +447,21 @@
 		E259874E2DB25F58008636F5 /* GitHubSchema */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GitHubSchema;
+		};
+		E2CF1F722DCA289C003E94CD /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2CF1F712DCA289C003E94CD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		E2CF1F752DCA2940003E94CD /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2CF1F742DCA2940003E94CD /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		E2CF1F7A2DCA2B0C003E94CD /* Markdownosaur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2CF1F792DCA2B0C003E94CD /* XCRemoteSwiftPackageReference "Markdownosaur" */;
+			productName = Markdownosaur;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -19,6 +19,19 @@ class IssuesTableViewController: UITableViewController {
     private var hasNextPage = false
     
     private let apollo = GraphQLClient.shared.apollo
+    
+    var shouldRefresh = false
+    var deleteid: ID?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if shouldRefresh {
+            issues.removeAll(where: { $0.id == deleteid })
+            tableView.reloadData()
+            shouldRefresh = false
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +119,13 @@ class IssuesTableViewController: UITableViewController {
             else { return }
             vc.presentationController?.delegate = self
             vc.repositoryId = repositoryId
+        } else if segue.identifier == "toIssueDetail" {
+            guard let vc = segue.destination as? IssueDetailTableViewController,
+                  let indexPath = tableView.indexPathForSelectedRow
+            else { return }
+            vc.issueId = issues[indexPath.row].id
+            vc.titleText = issues[indexPath.row].title
+            vc.auther = issues[indexPath.row].author?.login
         }
     }
 

@@ -1,0 +1,32 @@
+query GetIssueAndCommentsByID($id: ID!, $first: Int = 25, $after: String) {
+  node(id: $id) {
+    ... on Issue {
+      id
+      title
+      body
+      number
+      viewerCanDelete
+      viewerCanUpdate
+      author {
+        login
+        avatarUrl
+      }
+      comments(first: $first, after: $after) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          id
+          body
+          viewerCanDelete
+          viewerCanUpdate
+          author {
+            login
+            avatarUrl
+          }
+        }
+      }
+    }
+  }
+}

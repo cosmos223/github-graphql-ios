@@ -20,6 +20,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
 
   public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
+    case "AddCommentPayload": return GitHubSchema.Objects.AddCommentPayload
     case "AddedToMergeQueueEvent": return GitHubSchema.Objects.AddedToMergeQueueEvent
     case "AddedToProjectEvent": return GitHubSchema.Objects.AddedToProjectEvent
     case "App": return GitHubSchema.Objects.App
@@ -54,6 +55,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "ConvertedToDiscussionEvent": return GitHubSchema.Objects.ConvertedToDiscussionEvent
     case "CreateIssuePayload": return GitHubSchema.Objects.CreateIssuePayload
     case "CrossReferencedEvent": return GitHubSchema.Objects.CrossReferencedEvent
+    case "DeleteIssuePayload": return GitHubSchema.Objects.DeleteIssuePayload
     case "DemilestonedEvent": return GitHubSchema.Objects.DemilestonedEvent
     case "DependabotUpdate": return GitHubSchema.Objects.DependabotUpdate
     case "DependencyGraphManifest": return GitHubSchema.Objects.DependencyGraphManifest
@@ -90,6 +92,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "IpAllowListEntry": return GitHubSchema.Objects.IpAllowListEntry
     case "Issue": return GitHubSchema.Objects.Issue
     case "IssueComment": return GitHubSchema.Objects.IssueComment
+    case "IssueCommentConnection": return GitHubSchema.Objects.IssueCommentConnection
     case "IssueConnection": return GitHubSchema.Objects.IssueConnection
     case "IssueType": return GitHubSchema.Objects.IssueType
     case "IssueTypeAddedEvent": return GitHubSchema.Objects.IssueTypeAddedEvent
@@ -272,6 +275,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UnmarkedAsDuplicateEvent": return GitHubSchema.Objects.UnmarkedAsDuplicateEvent
     case "UnpinnedEvent": return GitHubSchema.Objects.UnpinnedEvent
     case "UnsubscribedEvent": return GitHubSchema.Objects.UnsubscribedEvent
+    case "UpdateIssuePayload": return GitHubSchema.Objects.UpdateIssuePayload
     case "User": return GitHubSchema.Objects.User
     case "UserBlockedEvent": return GitHubSchema.Objects.UserBlockedEvent
     case "UserContentEdit": return GitHubSchema.Objects.UserContentEdit
