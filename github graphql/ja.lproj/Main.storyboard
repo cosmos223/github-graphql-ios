@@ -42,6 +42,11 @@
                                 <segue destination="tHW-tW-lMq" kind="showDetail" id="mWo-oh-Pun"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="text.page.badge.magnifyingglass" catalog="system" id="gu9-hd-zrk">
+                            <connections>
+                                <segue destination="UYs-Wr-CQ8" kind="show" id="qgx-hL-clb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBO-iP-8wi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,6 +91,106 @@
             </objects>
             <point key="canvasLocation" x="2131" y="10"/>
         </scene>
+        <!--詳細検索-->
+        <scene sceneID="FSG-TN-r9w">
+            <objects>
+                <viewController id="UYs-Wr-CQ8" customClass="AdvancedSearchViewController" customModule="github_graphql" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lok-dy-8Xq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sy-0g-3vd">
+                                <rect key="frame" x="0.0" y="214" width="393" height="570"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpQ-0U-eee">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-NO-lfN">
+                                                <rect key="frame" x="8" y="0.0" width="377" height="34.333333333333336"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-Hd-hry">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="34.333333333333336"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="検索"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="検索"/>
+                                                        <connections>
+                                                            <action selector="search:" destination="UYs-Wr-CQ8" eventType="touchUpInside" id="GUR-A9-2eB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="QTJ-NO-lfN" firstAttribute="top" secondItem="EpQ-0U-eee" secondAttribute="top" id="Lz7-TG-jk8"/>
+                                            <constraint firstAttribute="bottom" secondItem="QTJ-NO-lfN" secondAttribute="bottom" id="MNg-Ad-HRc"/>
+                                            <constraint firstItem="QTJ-NO-lfN" firstAttribute="leading" secondItem="EpQ-0U-eee" secondAttribute="leading" constant="8" id="XjI-Bb-RGq"/>
+                                            <constraint firstAttribute="trailing" secondItem="QTJ-NO-lfN" secondAttribute="trailing" constant="8" id="brB-cW-FUA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EpQ-0U-eee" firstAttribute="leading" secondItem="yxp-8d-9Pl" secondAttribute="leading" id="5Lo-mc-fpU"/>
+                                    <constraint firstItem="EpQ-0U-eee" firstAttribute="bottom" secondItem="yxp-8d-9Pl" secondAttribute="bottom" id="X3j-In-Qgd"/>
+                                    <constraint firstItem="EpQ-0U-eee" firstAttribute="width" secondItem="uW2-fU-s6i" secondAttribute="width" id="c3P-p6-JXr"/>
+                                    <constraint firstItem="EpQ-0U-eee" firstAttribute="top" secondItem="yxp-8d-9Pl" secondAttribute="top" id="kv1-aU-3ss"/>
+                                    <constraint firstItem="EpQ-0U-eee" firstAttribute="trailing" secondItem="yxp-8d-9Pl" secondAttribute="trailing" id="vYR-wZ-VzZ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yxp-8d-9Pl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="uW2-fU-s6i"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CEf-Cf-ras"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CEf-Cf-ras" firstAttribute="trailing" secondItem="3sy-0g-3vd" secondAttribute="trailing" id="cP5-ri-tUu"/>
+                            <constraint firstItem="CEf-Cf-ras" firstAttribute="bottom" secondItem="3sy-0g-3vd" secondAttribute="bottom" id="k4N-vi-w6j"/>
+                            <constraint firstItem="3sy-0g-3vd" firstAttribute="top" secondItem="CEf-Cf-ras" secondAttribute="top" id="pwi-MN-aEK"/>
+                            <constraint firstItem="3sy-0g-3vd" firstAttribute="leading" secondItem="CEf-Cf-ras" secondAttribute="leading" id="xAM-ug-ie5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="詳細検索" largeTitleDisplayMode="always" id="2cy-EO-o81"/>
+                    <connections>
+                        <outlet property="stackView" destination="QTJ-NO-lfN" id="lq5-lG-KzY"/>
+                        <segue destination="7mi-FD-nB5" kind="show" identifier="toResult" id="aeL-I9-Pzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KdC-no-7C7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="780"/>
+        </scene>
+        <!--検索結果-->
+        <scene sceneID="9op-Z3-8Zl">
+            <objects>
+                <tableViewController id="7mi-FD-nB5" customClass="AdvancedSearchResultTableViewController" customModule="github_graphql" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bY2-CX-w1L">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Be5-5V-XnX">
+                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Be5-5V-XnX" id="6Am-1Q-DKh">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VTO-ic-mjF" kind="show" identifier="toIssues" id="1bh-v1-GGH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7mi-FD-nB5" id="LUu-YP-OfZ"/>
+                            <outlet property="delegate" destination="7mi-FD-nB5" id="UBi-vG-1pH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="検索結果" id="VfC-Yf-cGu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHf-uM-f4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="1634"/>
+        </scene>
         <!--Issue Detail Table View Controller-->
         <scene sceneID="7p6-xT-Es3">
             <objects>
@@ -122,6 +227,7 @@
                         <outlet property="createCommentButton" destination="8Ra-GP-mKs" id="gcE-i5-wRy"/>
                         <outlet property="menuButton" destination="bFm-cS-IBZ" id="CE6-CT-ReA"/>
                         <segue destination="GYJ-wf-rJg" kind="presentation" identifier="toEditIssue" id="jT4-6d-nf5"/>
+                        <segue destination="rbS-Df-lJ6" kind="presentation" identifier="toEditComment" id="eKc-wM-grP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anD-Qa-0MV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -594,9 +700,13 @@
             <point key="canvasLocation" x="4037" y="1634"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1bh-v1-GGH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="text.page.badge.magnifyingglass" catalog="system" width="106" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
