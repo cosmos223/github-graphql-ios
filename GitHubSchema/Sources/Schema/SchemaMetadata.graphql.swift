@@ -55,6 +55,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "ConvertedToDiscussionEvent": return GitHubSchema.Objects.ConvertedToDiscussionEvent
     case "CreateIssuePayload": return GitHubSchema.Objects.CreateIssuePayload
     case "CrossReferencedEvent": return GitHubSchema.Objects.CrossReferencedEvent
+    case "DeleteIssueCommentPayload": return GitHubSchema.Objects.DeleteIssueCommentPayload
     case "DeleteIssuePayload": return GitHubSchema.Objects.DeleteIssuePayload
     case "DemilestonedEvent": return GitHubSchema.Objects.DemilestonedEvent
     case "DependabotUpdate": return GitHubSchema.Objects.DependabotUpdate
@@ -275,6 +276,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "UnmarkedAsDuplicateEvent": return GitHubSchema.Objects.UnmarkedAsDuplicateEvent
     case "UnpinnedEvent": return GitHubSchema.Objects.UnpinnedEvent
     case "UnsubscribedEvent": return GitHubSchema.Objects.UnsubscribedEvent
+    case "UpdateIssueCommentPayload": return GitHubSchema.Objects.UpdateIssueCommentPayload
     case "UpdateIssuePayload": return GitHubSchema.Objects.UpdateIssuePayload
     case "User": return GitHubSchema.Objects.User
     case "UserBlockedEvent": return GitHubSchema.Objects.UserBlockedEvent

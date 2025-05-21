@@ -496,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CH-gb-sz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4037" y="1623"/>
+            <point key="canvasLocation" x="3111" y="1634"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nmq-jC-9yH">
@@ -514,7 +514,84 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDg-Em-i0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="1623"/>
+            <point key="canvasLocation" x="2131" y="1634"/>
+        </scene>
+        <!--コメントを編集-->
+        <scene sceneID="xTD-ld-ceU">
+            <objects>
+                <viewController id="Fgi-0v-7Et" customClass="EditCommentViewController" customModule="github_graphql" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UGB-3r-Pfl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-4e-C2D">
+                                <rect key="frame" x="8" y="56" width="377" height="727"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qAx-3h-4WT">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="359.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="19U-o6-9BL">
+                                        <rect key="frame" x="0.0" y="367.66666666666674" width="377" height="359.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iwD-D9-8LD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iwD-D9-8LD" firstAttribute="trailing" secondItem="sdq-4e-C2D" secondAttribute="trailing" constant="8" id="PZO-8d-quQ"/>
+                            <constraint firstItem="sdq-4e-C2D" firstAttribute="top" secondItem="iwD-D9-8LD" secondAttribute="top" id="PoL-Cf-gCM"/>
+                            <constraint firstItem="iwD-D9-8LD" firstAttribute="bottom" secondItem="sdq-4e-C2D" secondAttribute="bottom" priority="750" id="fwP-Kc-wN5"/>
+                            <constraint firstItem="sdq-4e-C2D" firstAttribute="leading" secondItem="iwD-D9-8LD" secondAttribute="leading" constant="8" id="gej-um-1Gh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="コメントを編集" id="TMO-iT-ZoC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KOF-Bb-C2R">
+                            <connections>
+                                <action selector="cancel:" destination="Fgi-0v-7Et" id="hjm-2b-aOQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZuE-Wt-zD3">
+                            <connections>
+                                <action selector="add:" destination="Fgi-0v-7Et" id="QTl-zO-S7V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewTextView" destination="19U-o6-9BL" id="KK5-RM-dGx"/>
+                        <outlet property="stackView" destination="sdq-4e-C2D" id="pgN-tx-kmG"/>
+                        <outlet property="textView" destination="qAx-3h-4WT" id="mpR-wm-Ekv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxa-n7-TBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4964" y="1634"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mrD-0u-ztr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rbS-Df-lJ6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qyR-dm-339">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fgi-0v-7Et" kind="relationship" relationship="rootViewController" id="hLT-TN-tAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4a7-Dq-9F9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4037" y="1634"/>
         </scene>
     </scenes>
     <resources>
